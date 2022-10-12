@@ -65,19 +65,21 @@
         <template #body="slotProps">
           <Button
             icon="pi pi-pencil"
-            class="p-button-rounded p-button-success mr-2"
+            class="p-button-rounded p-button-warning mr-2"
             @click="$refs.modalEditarEmpleado.abrir(slotProps.data)"
             style="margin-right: 5px"
           />
 
           <Button
             icon="pi pi-trash"
-            class="p-button-rounded p-button-warning"
+            class="p-button-rounded p-button-danger"
             @click="eliminar(slotProps)"
           />
         </template>
       </Column>
     </DataTable>
+
+    <ConfirmDialog></ConfirmDialog>
   </div>
 
   <!-- <Dialog header="Header" v-model:visible="display" >
@@ -202,11 +204,31 @@ export default {
     },
 
     eliminar(row){
+      this.$confirm.require({
+        header: 'Confirmación',
+        message: '¿Está seguro que desea eliminar el empleado?',
+        icon: 'pi pi-info-circle',
+        acceptClass: 'p-button-danger',
+        acceptIcon: 'pi pi-check',
+        rejectIcon: 'pi pi-times',        
+        accept: () => {
+          this.arrayEmpleados.splice(row.index, 1)
+          this.$toast.add({severity:'success', summary:'Confirmación de eliminación', detail:'Empleado elimado con éxito', life: 3000});
+        },
+        reject: () => {
+          this.$toast.add({severity:'error', summary:'Rejected', detail:'You have rejected', life: 3000});
+        },
+        onHide: () => {
+          this.$toast.add({severity:'error', summary:'Hide', detail:'You have hidden', life: 3000});
+        }
+      });
+
+
       console.log("row");
       console.log(row);
       console.log(row.index);
 
-      this.arrayEmpleados.splice(row.index, 1)
+      // this.arrayEmpleados.splice(row.index, 1)
     },
   },
 };

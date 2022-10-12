@@ -70,7 +70,12 @@ createApp(App)
     .component('InputSwitch', InputSwitch)
     .component('Tag', Tag)
     .use(router)
-    .use(PrimeVue)
+    .use(PrimeVue, {
+        locale: {
+            accept: 'Aceptar',
+            reject: 'Rechazar',
+            //...
+        }})
     .use(ToastService)
     .use(ConfirmationService)
     .use(DialogService)
