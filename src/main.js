@@ -40,10 +40,14 @@ import InputNumber from 'primevue/inputnumber';
 // Switch
 import InputSwitch from 'primevue/inputswitch';
 
+//Tag
+import Tag from 'primevue/tag';
 
+// Button
 import Button from 'primevue/button'
-import InputText from 'primevue/inputtext'
 
+// InputText
+import InputText from 'primevue/inputtext'
 
 import Modal from './components/modal_confirmacion/index.vue'
 
@@ -64,6 +68,7 @@ createApp(App)
     .component('Dropdown', Dropdown)
     .component('InputNumber', InputNumber)
     .component('InputSwitch', InputSwitch)
+    .component('Tag', Tag)
     .use(router)
     .use(PrimeVue)
     .use(ToastService)

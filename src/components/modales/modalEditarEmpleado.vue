@@ -16,6 +16,7 @@
           v-model="form.dni" 
           style="width: 100%"
           placeholder="Ingrese DNI"
+          disabled 
         />
 
         <h5 style="margin: 0px">Nombre</h5>
