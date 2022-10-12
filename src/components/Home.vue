@@ -46,11 +46,10 @@
       <Column field="nombre" header="Nombre"></Column>
       <Column field="apellido" header="Apellido"></Column>
       <Column field="sexo" header="Sexo"></Column>
-      <Column field="edad" header="Edad" style="text-align: center"></Column>
+      <Column field="edad" header="Edad"></Column>
       <Column
         field="supervisor"
         header="Supervisor"
-        style="text-align: center"
       >
         <template #body="slotProps">
           <span v-if="slotProps.data.supervisor == true">
@@ -62,7 +61,7 @@
         </template>
       </Column>
 
-      <Column field="eliminar" header="Eliminar" style="text-align: center">
+      <Column field="eliminar" header="Eliminar">
         <template #body="slotProps">
           <Button
             icon="pi pi-pencil"

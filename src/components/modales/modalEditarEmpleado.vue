@@ -5,7 +5,7 @@
     <Dialog v-model:visible="display" icon="pi pi-refresh" style="width: 50%" class="flex justify-content-center">
       <template #header icon="pi pi-refresh">
         
-        <h3> <i class="pi pi-user-edit" /> Editar empleado empleado</h3>
+        <h3> <i class="pi pi-user-edit" /> Editar empleado</h3>
       </template>
 
 
